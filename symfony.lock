@@ -256,6 +256,18 @@
     "symfony/acl-bundle": {
         "version": "v2.3.0"
     },
+    "symfony/apache-pack": {
+        "version": "1.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "main",
+            "version": "1.0",
+            "ref": "9d254a22efca7264203eea98b866f16f944b2f09"
+        },
+        "files": [
+            "public/.htaccess"
+        ]
+    },
     "symfony/console": {
         "version": "6.1",
         "recipe": {
@@ -488,6 +500,18 @@
             "config/packages/webpack_encore.yaml",
             "package.json",
             "webpack.config.js"
+        ]
+    },
+    "twig/extensions": {
+        "version": "1.5",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "1.0",
+            "ref": "a86723ee8d8b2f9437c8ce60a5546a1c267da5ed"
+        },
+        "files": [
+            "config/packages/twig_extensions.yaml"
         ]
     },
     "twig/extra-bundle": {
