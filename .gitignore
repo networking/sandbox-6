@@ -28,4 +28,5 @@ yarn-error.log
 
 ###> phpstorm ###
 .idea
+.DS_Store
 ###< phpstorm ###
