@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello UxCropperController!{% endblock %}
+
+{% block content_row %}
+    <div class="row">
+        <div class="col">{{ form(form) }}</div>
+        <div class="col">{% if cropped_image %}
+                <img src="/img/{{ cropped_image }}">
+            {% endif %}</div>
+    </div>
+{% endblock %}

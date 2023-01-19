@@ -1,3 +1,6 @@
+imports:
+    - { resource: "@NetworkingInitCmsBundle/Resources/config/event_listeners.yaml" }
+
 doctrine:
     dbal:
         url: '%env(resolve:DATABASE_URL)%'

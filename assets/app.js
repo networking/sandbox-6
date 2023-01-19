@@ -9,3 +9,5 @@
 import './styles/app.css';
 import 'bootstrap/scss/bootstrap.scss'
 import 'bootstrap'
+
+import './bootstrap'

@@ -1,0 +1,12 @@
+<div {{ attributes }}>
+    <input data-model="query" type="search">
+
+    <p>Searching form products like {{ query }}</p>
+
+    <ul>
+        {% for product in this.products %}
+            <li>{{ product.name }}: {{ product.price|format_currency('CHF') }}</li>
+        {% endfor  %}
+    </ul>
+
+</div>

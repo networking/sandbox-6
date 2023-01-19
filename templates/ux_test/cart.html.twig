@@ -1,0 +1,8 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello UxTestController!{% endblock %}
+
+{% block content_row %}
+    {{ render_chart(chart, {'class': 'my-chart'}) }}
+    {{ render_chart(polar, {'class': 'my-chart'}) }}
+{% endblock %}

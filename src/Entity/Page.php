@@ -24,41 +24,41 @@ class Page extends BasePage{
     /**
      * @var ContentRoute
      */
-    #[ORM\OneToOne(targetEntity: 'Networking\InitCmsBundle\Entity\ContentRoute', cascade: ['remove', 'persist'])]
+    #[ORM\OneToOne(targetEntity: \Networking\InitCmsBundle\Entity\ContentRoute::class, cascade: ['remove', 'persist'])]
     #[ORM\JoinColumn(name: 'content_route_id', referencedColumnName: 'id')]
     protected $contentRoute;
 
-    #[ORM\OneToMany(mappedBy: 'page', targetEntity: 'Networking\InitCmsBundle\Entity\LayoutBlock', cascade: ['remove', 'persist'], orphanRemoval: true)]
+    #[ORM\OneToMany(mappedBy: 'page', targetEntity: \Networking\InitCmsBundle\Entity\LayoutBlock::class, cascade: ['remove', 'persist'], orphanRemoval: true)]
     #[ORM\OrderBy(['sortOrder' => 'ASC'])]
     protected $layoutBlock;
 
 
-    #[ORM\OneToMany(mappedBy: 'page', targetEntity: 'Networking\InitCmsBundle\Entity\MenuItem', cascade: ['remove'], orphanRemoval: true)]
+    #[ORM\OneToMany(mappedBy: 'page', targetEntity: \Networking\InitCmsBundle\Entity\MenuItem::class, cascade: ['remove'], orphanRemoval: true)]
     protected $menuItem;
 
 
-    #[ORM\OneToMany(mappedBy: 'page', targetEntity: 'Networking\InitCmsBundle\Entity\PageSnapshot', cascade: ['remove'], orphanRemoval: true)]
+    #[ORM\OneToMany(mappedBy: 'page', targetEntity: \Networking\InitCmsBundle\Entity\PageSnapshot::class, cascade: ['remove'], orphanRemoval: true)]
     #[ORM\OrderBy(['version' => 'DESC'])]
     protected $snapshots;
 
-    #[ORM\OneToMany(mappedBy: 'parent', targetEntity: 'App\Entity\Page')]
+    #[ORM\OneToMany(mappedBy: 'parent', targetEntity: \App\Entity\Page::class)]
     protected $children;
 
-    #[ORM\ManyToOne(targetEntity: 'App\Entity\Page')]
+    #[ORM\ManyToOne(targetEntity: \App\Entity\Page::class)]
     #[ORM\JoinColumn(name: 'alias_id', referencedColumnName: 'id', onDelete: 'SET NULL')]
     protected $alias;
 
-    #[ORM\ManyToOne(targetEntity: 'App\Entity\Page', cascade: ['persist'], inversedBy: 'children')]
+    #[ORM\ManyToOne(targetEntity: \App\Entity\Page::class, cascade: ['persist'], inversedBy: 'children')]
     #[ORM\JoinColumn(name: 'parent_id', referencedColumnName: 'id', onDelete: 'SET NULL')]
     #[Gedmo\TreeParent]
     protected $parent;
 
-    #[ORM\ManyToMany(targetEntity: 'App\Entity\Page', inversedBy: 'translations', cascade: ['persist'])]
+    #[ORM\ManyToMany(targetEntity: \App\Entity\Page::class, inversedBy: 'translations', cascade: ['persist'])]
     #[ORM\JoinTable(name: 'page_translation')]
     #[ORM\JoinColumn(name: 'translation_id', referencedColumnName: 'id')]
     #[ORM\InverseJoinColumn(name: 'original_id', referencedColumnName: 'id')]
     protected $originals;
 
-    #[ORM\ManyToMany(targetEntity: 'App\Entity\Page', mappedBy: 'originals', cascade: ['persist'])]
+    #[ORM\ManyToMany(targetEntity: \App\Entity\Page::class, mappedBy: 'originals', cascade: ['persist'])]
     protected $translations;
 }
