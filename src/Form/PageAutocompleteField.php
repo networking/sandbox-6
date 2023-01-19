@@ -23,7 +23,7 @@ class PageAutocompleteField extends AbstractType
             $alias = $qb->getRootAliases()[0];
         return $qb
             ->where($alias.'.name LIKE :name')
-            ->where($alias.'.locale LIKE :locale')
+            ->andwhere($alias.'.locale LIKE :locale')
             ->setParameter('locale', $locale);
     };
 
