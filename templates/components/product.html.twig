@@ -1,7 +1,19 @@
 <div {{ attributes }}>
-    <input data-model="query" type="search">
+        <div class="field">
+            <div class="field__label">Product Name</div>
+            <input data-model="query" type="search">
+        </div>
+    <div class="field">
+        <div class="field__label">Product Category</div>
+        <select data-model="category">
+          <option value="">All</option>
+          <option value="Books">Books</option>
+          <option value="Clothing">Clothing</option>
+          <option value="Phones">Phones</option>
+        </select>
+    </div>
 
-    <p>Searching form products like {{ query }}</p>
+    <p>Searching form products like {{ query }} {% if category %}in Category {{ category }}{% endif %}</p>
 
     <ul>
         {% for product in this.products %}

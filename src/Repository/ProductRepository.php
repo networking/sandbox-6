@@ -21,17 +21,26 @@ class ProductRepository extends ServiceEntityRepository
         parent::__construct($registry, Product::class);
     }
 
-    public function search(string $query): array
+    public function search(string $query, string $category): array
     {
-        if($query === ''){
-            return [];
+        $qb = $this->createQueryBuilder('p')->select('p');
+
+        if($query !== ''){
+            $qb->andWhere('p.name LIKE :query')
+                ->setParameter('query', '%'.$query.'%')
+            ;
         }
-        return $this->createQueryBuilder('p')
-            ->andWhere('p.name LIKE :query')
-            ->setParameter('query', '%'.$query.'%')
-            ->getQuery()
-            ->getResult()
-        ;
+
+        if($category !== ''){
+            $qb->leftJoin('p.productCategories', 'c')
+                ->andWhere('c.name = :category')
+                ->setParameter('category', $category)
+            ;
+        }
+
+
+        return $qb->getQuery()
+            ->getResult();
     }
 
     public function save(Product $entity, bool $flush = false): void

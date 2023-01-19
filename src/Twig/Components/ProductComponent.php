@@ -16,11 +16,14 @@ final class ProductComponent
     #[LiveProp(writable: true)]
     public string $query = '';
 
+    #[LiveProp(writable: true)]
+    public string $category = '';
+
     public function __construct(private readonly ProductRepository $productRepository){}
 
     public function getProducts(): array
     {
-        return $this->productRepository->search($this->query);
+        return $this->productRepository->search($this->query, $this->category);
     }
 
 
