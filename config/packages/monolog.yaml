@@ -43,12 +43,13 @@ when@prod:
             main:
                 type: fingers_crossed
                 action_level: error
-                handler: nested
+                handler: rotated
                 excluded_http_codes: [404, 405]
                 buffer_size: 50 # How many messages should be saved? Prevent memory leaks
-            nested:
-                type: stream
-                path: php://stderr
+            rotated:
+                type: rotating_file
+                max_files: 7
+                path: "%kernel.logs_dir%/%kernel.environment%.log"
                 level: debug
                 formatter: monolog.formatter.json
             console:
@@ -56,6 +57,7 @@ when@prod:
                 process_psr_3_messages: false
                 channels: ["!event", "!doctrine"]
             deprecation:
-                type: stream
+                type: rotating_file
+                max_files: 7
+                path: "%kernel.logs_dir%/%kernel.environment%-deprecated.log"
                 channels: [deprecation]
-                path: php://stderr

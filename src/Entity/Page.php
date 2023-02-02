@@ -1,7 +1,6 @@
 <?php
 namespace App\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Networking\InitCmsBundle\Entity\BasePage;
 use Doctrine\ORM\Mapping as ORM;
