@@ -4,6 +4,7 @@
     "license": "proprietary",
     "minimum-stability": "stable",
     "prefer-stable": true,
+    "name": "networking/sandbox-6",
     "require": {
         "php": ">=8.1",
         "ext-ctype": "*",
