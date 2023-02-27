@@ -138,5 +138,8 @@
             "type": "vcs",
             "url": "git@github.com:networking/form-generator-bundle.git"
         }
-    ]
+    ],
+    "aliases": {
+        "dev-master": "1.0.x-dev"
+    }
 }
