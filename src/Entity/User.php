@@ -19,21 +19,21 @@ class User extends BaseUser{
     protected $adminSettings;
 
     #[ORM\Column(name: 'locale', type: 'string', length: 6, nullable: true)]
-    protected $locale;
+    protected ?string $locale;
 
     #[ORM\Column(name: 'firstname', type: 'string', length: 255, nullable: true)]
-    protected $firstname;
+    protected ?string $firstname;
 
     #[ORM\Column(name: 'lastname', type: 'string', length: 255, nullable: true)]
-    protected $lastname;
+    protected ?string $lastname;
 
     #[ORM\Column(name: 'two_step_code', type: 'string', length: 255, nullable: true)]
-    protected $twoStepVerificationCode;
+    protected ?string $twoStepVerificationCode;
 
     #[ORM\ManyToMany(targetEntity: Group::class)]
     #[ORM\JoinTable(name: 'user_user_group')]
     #[ORM\JoinColumn(name: 'user_id', referencedColumnName: 'id', onDelete: 'CASCADE')]
     #[ORM\InverseJoinColumn(name: 'group_id', referencedColumnName: 'id', onDelete: 'CASCADE')]
-    protected $groups;
+    protected array|\Doctrine\Common\Collections\Collection $groups;
 
 }
