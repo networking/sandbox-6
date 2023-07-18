@@ -3,7 +3,6 @@
 namespace App\Form;
 
 use App\Entity\Page;
-use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\QueryBuilder;
 use Symfony\Component\Form\AbstractType;
@@ -16,7 +15,7 @@ use Symfony\UX\Autocomplete\Form\ParentEntityAutocompleteType;
 class PageAutocompleteField extends AbstractType
 {
     public function __construct(private readonly RequestStack $requestStack){}
-    public function configureOptions(OptionsResolver $resolver)
+    public function configureOptions(OptionsResolver $resolver): void
     {
         $locale = $this->requestStack->getCurrentRequest()->getLocale();
         $filter = function(QueryBuilder $qb, string $query, EntityRepository $repository) use ($locale) {

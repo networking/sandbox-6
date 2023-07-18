@@ -42,4 +42,5 @@ return [
     Networking\FormGeneratorBundle\NetworkingFormGeneratorBundle::class => ['all' => true],
     FOS\ElasticaBundle\FOSElasticaBundle::class => ['all' => true],
     Networking\ElasticSearchBundle\NetworkingElasticSearchBundle::class => ['all' => true],
+    Symfony\UX\StimulusBundle\StimulusBundle::class => ['all' => true],
 ];

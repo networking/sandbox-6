@@ -34,3 +34,7 @@ file that was distributed with this source code.
 </ul>
 
 {% endif %}
+
+{% if form_page_content is defined %}
+    {{ render(controller('Networking\\FormGeneratorBundle\\Controller\\FrontendFormController::renderFormAction', {'form': form_page_content})) }}
+{% endif %}

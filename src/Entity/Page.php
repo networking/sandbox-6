@@ -1,11 +1,15 @@
 <?php
 namespace App\Entity;
 
+use Doctrine\Common\Collections\Collection;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Networking\InitCmsBundle\Entity\BasePage;
 use Doctrine\ORM\Mapping as ORM;
-use Networking\InitCmsBundle\Model\ContentRoute;
-
+use Networking\InitCmsBundle\Entity\LayoutBlock;
+use Networking\InitCmsBundle\Entity\MenuItem;
+use Networking\InitCmsBundle\Entity\PageSnapshot;
+use Networking\InitCmsBundle\Model\ContentRouteInterface;
+use Networking\InitCmsBundle\Model\PageInterface;
 
 #[Gedmo\Tree(type: 'materializedPath')]
 #[Gedmo\Loggable]
@@ -13,51 +17,48 @@ use Networking\InitCmsBundle\Model\ContentRoute;
 #[ORM\HasLifecycleCallbacks()]
 #[ORM\Table(name: 'page', uniqueConstraints: [])]
 #[ORM\UniqueConstraint(name: 'path_idx', columns: ['path', 'locale'])]
-class Page extends BasePage{
-
+class Page extends BasePage
+{
     #[ORM\Column(type: 'integer')]
     #[ORM\Id]
     #[ORM\GeneratedValue(strategy: 'IDENTITY')]
     protected $id;
 
-    /**
-     * @var ContentRoute
-     */
     #[ORM\OneToOne(targetEntity: \Networking\InitCmsBundle\Entity\ContentRoute::class, cascade: ['remove', 'persist'])]
     #[ORM\JoinColumn(name: 'content_route_id', referencedColumnName: 'id')]
-    protected $contentRoute;
+    protected ?ContentRouteInterface $contentRoute = null;
 
-    #[ORM\OneToMany(mappedBy: 'page', targetEntity: \Networking\InitCmsBundle\Entity\LayoutBlock::class, cascade: ['remove', 'persist'], orphanRemoval: true)]
+    #[ORM\OneToMany(mappedBy: 'page', targetEntity: LayoutBlock::class, cascade: ['remove', 'persist'], orphanRemoval: true)]
     #[ORM\OrderBy(['sortOrder' => 'ASC'])]
-    protected $layoutBlock;
+    protected Collection $layoutBlock;
 
 
-    #[ORM\OneToMany(mappedBy: 'page', targetEntity: \Networking\InitCmsBundle\Entity\MenuItem::class, cascade: ['remove'], orphanRemoval: true)]
-    protected $menuItem;
+    #[ORM\OneToMany(mappedBy: 'page', targetEntity: MenuItem::class, cascade: ['remove'], orphanRemoval: true)]
+    protected Collection $menuItem;
 
 
-    #[ORM\OneToMany(mappedBy: 'page', targetEntity: \Networking\InitCmsBundle\Entity\PageSnapshot::class, cascade: ['remove'], orphanRemoval: true)]
+    #[ORM\OneToMany(mappedBy: 'page', targetEntity: PageSnapshot::class, cascade: ['remove'], orphanRemoval: true)]
     #[ORM\OrderBy(['version' => 'DESC'])]
-    protected $snapshots;
+    protected Collection $snapshots;
 
-    #[ORM\OneToMany(mappedBy: 'parent', targetEntity: \App\Entity\Page::class)]
-    protected $children;
+    #[ORM\OneToMany(mappedBy: 'parent', targetEntity: Page::class)]
+    protected Collection|array $children;
 
-    #[ORM\ManyToOne(targetEntity: \App\Entity\Page::class)]
+    #[ORM\ManyToOne(targetEntity: Page::class)]
     #[ORM\JoinColumn(name: 'alias_id', referencedColumnName: 'id', onDelete: 'SET NULL')]
-    protected $alias;
+    protected ?PageInterface $alias = null;
 
-    #[ORM\ManyToOne(targetEntity: \App\Entity\Page::class, cascade: ['persist'], inversedBy: 'children')]
+    #[ORM\ManyToOne(targetEntity: Page::class, cascade: ['persist'], inversedBy: 'children')]
     #[ORM\JoinColumn(name: 'parent_id', referencedColumnName: 'id', onDelete: 'SET NULL')]
     #[Gedmo\TreeParent]
-    protected $parent;
+    protected PageInterface|int|null $parent = null;
 
-    #[ORM\ManyToMany(targetEntity: \App\Entity\Page::class, inversedBy: 'translations', cascade: ['persist'])]
+    #[ORM\ManyToMany(targetEntity: Page::class, inversedBy: 'translations', cascade: ['persist'])]
     #[ORM\JoinTable(name: 'page_translation')]
     #[ORM\JoinColumn(name: 'translation_id', referencedColumnName: 'id')]
     #[ORM\InverseJoinColumn(name: 'original_id', referencedColumnName: 'id')]
-    protected $originals;
+    protected Collection|array $originals;
 
-    #[ORM\ManyToMany(targetEntity: \App\Entity\Page::class, mappedBy: 'originals', cascade: ['persist'])]
-    protected $translations;
+    #[ORM\ManyToMany(targetEntity: Page::class, mappedBy: 'originals', cascade: ['persist'])]
+    protected Collection|array $translations;
 }

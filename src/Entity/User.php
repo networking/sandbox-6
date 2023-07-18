@@ -8,8 +8,8 @@ use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Table(name: 'user')]
 #[ORM\Entity]
-class User extends BaseUser{
-
+class User extends BaseUser
+{
     #[ORM\Column(name: 'id', type: 'integer')]
     #[ORM\Id]
     #[ORM\GeneratedValue(strategy: 'AUTO')]
@@ -34,6 +34,5 @@ class User extends BaseUser{
     #[ORM\JoinTable(name: 'user_user_group')]
     #[ORM\JoinColumn(name: 'user_id', referencedColumnName: 'id', onDelete: 'CASCADE')]
     #[ORM\InverseJoinColumn(name: 'group_id', referencedColumnName: 'id', onDelete: 'CASCADE')]
-    protected array|\Doctrine\Common\Collections\Collection $groups;
-
+    protected array|\Doctrine\Common\Collections\Collection $groups = [];
 }

@@ -3,4 +3,47 @@ fos_elastica:
     clients:
         default: { url: '%env(ELASTICSEARCH_URL)%' }
     indexes:
-        app: null
+        page:
+            use_alias: true
+            index_name: '%env(ELASTICSEARCH_INDEX)%page'
+            settings:
+                index:
+                    analysis:
+                        analyzer:
+                            my_search_analyzer:
+                                type: custom
+                                tokenizer: standard
+                                filter: [ lowercase, de_snowball, fr_snowball, it_snowball, de_stop, fr_stop, it_stop ]
+                        filter:
+                            de_snowball:
+                                type: snowball
+                                language: German2
+                            fr_snowball:
+                                type: snowball
+                                language: French
+                            it_snowball:
+                                type: snowball
+                                language: Italian
+                            de_stop:
+                                type: stop
+                                stopwords: _german_
+                            fr_stop:
+                                type: stop
+                                stopwords: _french_
+                            it_stop:
+                                type: stop
+                                stopwords: _italian_
+            indexable_callback: [ 'Networking\ElasticSearchBundle\Transformer\IndexableChecker', 'isIndexable' ]
+            properties:
+                name: { type: 'text', analyzer: my_search_analyzer }
+                metaTitle: { type: 'text', analyzer: my_search_analyzer }
+                locale: { type: 'text', store: false }
+                content: { type: 'text', analyzer: my_search_analyzer }
+                url: { type: 'text', index: false }
+            persistence:
+                identifier: resourceId
+                model: Networking\InitCmsBundle\Entity\PageSnapshot
+                provider:
+                    service: Networking\ElasticSearchBundle\Provider\PageSnapshotProvider
+                model_to_elastica_transformer:
+                    service: Networking\ElasticSearchBundle\Transformer\PageSnapshotToElasticaTransformer
