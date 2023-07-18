@@ -2,6 +2,7 @@ sonata_admin:
     persist_filters: true
     options:
         pager_links: 10
+        default_admin_route: 'edit'
     security:
         handler: sonata.admin.security.handler.acl
         # acl security information
