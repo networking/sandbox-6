@@ -11,8 +11,6 @@ use Networking\InitCmsBundle\Entity\PageSnapshot;
 use Networking\InitCmsBundle\Model\ContentRouteInterface;
 use Networking\InitCmsBundle\Model\PageInterface;
 
-#[Gedmo\Tree(type: 'materializedPath')]
-#[Gedmo\Loggable]
 #[ORM\Entity()]
 #[ORM\HasLifecycleCallbacks()]
 #[ORM\Table(name: 'page', uniqueConstraints: [])]
@@ -30,16 +28,16 @@ class Page extends BasePage
 
     #[ORM\OneToMany(mappedBy: 'page', targetEntity: LayoutBlock::class, cascade: ['remove', 'persist'], orphanRemoval: true)]
     #[ORM\OrderBy(['sortOrder' => 'ASC'])]
-    protected Collection $layoutBlock;
+    protected ?Collection $layoutBlocks = null;
 
 
     #[ORM\OneToMany(mappedBy: 'page', targetEntity: MenuItem::class, cascade: ['remove'], orphanRemoval: true)]
-    protected Collection $menuItem;
+    protected ?Collection $menuItem = null;
 
 
     #[ORM\OneToMany(mappedBy: 'page', targetEntity: PageSnapshot::class, cascade: ['remove'], orphanRemoval: true)]
     #[ORM\OrderBy(['version' => 'DESC'])]
-    protected Collection $snapshots;
+    protected ?Collection $snapshots = null;
 
     #[ORM\OneToMany(mappedBy: 'parent', targetEntity: Page::class)]
     protected Collection|array $children;
@@ -61,4 +59,22 @@ class Page extends BasePage
 
     #[ORM\ManyToMany(targetEntity: Page::class, mappedBy: 'originals', cascade: ['persist'])]
     protected Collection|array $translations;
+
+    #[Gedmo\TreePathSource()]
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    protected ?string $url = null;
+
+    #[Gedmo\TreePath(separator: "/")]
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    protected ?string $path = null;
+
+    #[Gedmo\TreeLevel()]
+    #[ORM\Column(name: 'lvl', type: 'integer', nullable: true)]
+    protected ?int $level = null;
+
+    public function setId($id): self
+    {
+        $this->id = $id;
+        return $this;
+    }
 }

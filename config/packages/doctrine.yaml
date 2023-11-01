@@ -1,5 +1,5 @@
 imports:
-    - { resource: "@NetworkingInitCmsBundle/Resources/config/event_listeners.yaml" }
+    - { resource: "@NetworkingInitCmsBundle/Resources/config/gedmo_doctrine_extensions.yaml" }
 
 doctrine:
     dbal:
@@ -35,6 +35,10 @@ doctrine:
                         type: attribute
                         prefix: "Networking\\FormGeneratorBundle\\Model"
                         dir: '%kernel.project_dir%/vendor/networking/form-generator-bundle/src/Model'
+                    NetworkingInitCmsBundle:
+                        type: attribute
+                        prefix: "Networking\\InitCmsBundle\\Entity"
+                        dir: '%kernel.project_dir%/vendor/networking/init-cms-bundle/src/Entity'
                     gedmo_translator:
                         type: attribute
                         prefix: "Gedmo\\Translator\\Entity"

@@ -52,3 +52,4 @@ services:
 
     Sonata\UserBundle\Model\UserManagerInterface:
         alias: networking_init_cms.user_manager
+

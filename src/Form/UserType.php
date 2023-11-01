@@ -16,22 +16,8 @@ class UserType extends AbstractType
             ->add('username')
             ->add('email')
             ->add('enabled')
-//            ->add('salt')
             ->add('password')
-//            ->add('lastLogin')
-//            ->add('confirmationToken')
-//            ->add('passwordRequestedAt')
-//            ->add('roles')
-//            ->add('createdAt')
-//            ->add('updatedAt')
-//            ->add('adminSettings')
-//            ->add('locale')
-//            ->add('firstname')
-//            ->add('lastname')
-//            ->add('twoStepVerificationCode')
-//            ->add('groups')
             ->add('page', PageAutocompleteField::class, ['mapped' => false])
-
             ->add('portionSize', ChoiceType::class, [
                 'mapped' => false,
                 'multiple' => true,

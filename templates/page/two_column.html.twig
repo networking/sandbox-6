@@ -17,11 +17,11 @@ file that was distributed with this source code.
         <div class="row">
             <div class="col">
                 <div class="jumbotron">
-                    {% set headerBlockCount = page.layoutBlock('header')|length %}
-
-                    {% for layoutBlock in page.layoutBlock('header') %}
+                    {% set headerBlockCount = page.layoutBlocks('header')|length %}
+                    {% for layoutBlock in page.layoutBlocks('header') %}
                         <div class="span{{ 12/headerBlockCount }}">
-                            {{ render_initcms_block('content/hero_block.html.twig', layoutBlock) }}
+                            {% set template = layoutBlock.template|default('content/cms_block.html.twig') %}
+                            {{ render_initcms_block(template, layoutBlock)}}
                         </div>
                     {% endfor %}
                 </div>
@@ -32,8 +32,19 @@ file that was distributed with this source code.
 
         <div class="col-md-6">
             <div class="middle">
-                {% for layoutBlock in page.layoutBlock('left') %}
-                    {{ render_initcms_block('content/cms_block.html.twig', layoutBlock) }}
+                {% for layoutBlock in page.layoutBlocks('left') %}
+
+                    {% set template = layoutBlock.template|default('content/cms_block.html.twig') %}
+
+                    {% if layoutBlock.getContentTypeName() is same as('Custom Form') %}
+                        {% set template = 'content/form_page_content.html.twig' %}
+                    {% endif %}
+
+                    {% if layoutBlock.getContentTypeName() is same as('Gallery Viewerer') %}
+                        {% set template = 'content/gallery_view.html.twig' %}
+                    {% endif %}
+
+                    {{ render_initcms_block(template, layoutBlock)}}
                 {% endfor %}
             </div>
         </div>
@@ -41,8 +52,19 @@ file that was distributed with this source code.
         <div class="col-md-6">
             {% block content_sidebar %}
                 <div class="middle">
-                    {% for layoutBlock in page.layoutBlock('right') %}
-                        {{ render_initcms_block('content/cms_block.html.twig', layoutBlock) }}
+                    {% for layoutBlock in page.layoutBlocsk('right') %}
+
+                        {% set template = layoutBlock.template|default('content/cms_block.html.twig') %}
+
+                        {% if layoutBlock.getContentTypeName() is same as('Custom Form') %}
+                            {% set template = 'content/form_page_content.html.twig' %}
+                        {% endif %}
+
+                        {% if layoutBlock.getContentTypeName() is same as('Gallery Viewer') %}
+                            {% set template = 'content/gallery_view.html.twig' %}
+                        {% endif %}
+
+                        {{ render_initcms_block(template, layoutBlock)}}
                     {% endfor %}
                 </div>
             {% endblock content_sidebar %}

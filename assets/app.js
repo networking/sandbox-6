@@ -9,5 +9,12 @@
 import './styles/app.css';
 import 'bootstrap/scss/bootstrap.scss'
 import 'bootstrap'
-
 import './bootstrap'
+import Lightbox from 'bs5-lightbox'
+
+(() =>{
+    document.querySelectorAll('[data-toggle="lightbox"]').forEach(el => el.addEventListener('click', Lightbox.initialize));
+})();
+
+
+

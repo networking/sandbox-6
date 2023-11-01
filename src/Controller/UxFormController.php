@@ -27,7 +27,7 @@ class UxFormController extends AbstractController
             $this->userManager->updateUser($user);
         }
 
-        return $this->renderForm('ux_form/index.html.twig', [
+        return $this->render('ux_form/index.html.twig', [
             'form' => $form,
         ]);
     }
