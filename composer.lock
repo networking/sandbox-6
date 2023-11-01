@@ -3846,12 +3846,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/networking/form-generator-bundle.git",
-                "reference": "5a600df555d48ed2c5487995180ad5250cfb5955"
+                "reference": "8e18c4139b4c22702bec9c793667a9d3be9cbf1b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/networking/form-generator-bundle/zipball/5a600df555d48ed2c5487995180ad5250cfb5955",
-                "reference": "5a600df555d48ed2c5487995180ad5250cfb5955",
+                "url": "https://api.github.com/repos/networking/form-generator-bundle/zipball/8e18c4139b4c22702bec9c793667a9d3be9cbf1b",
+                "reference": "8e18c4139b4c22702bec9c793667a9d3be9cbf1b",
                 "shasum": ""
             },
             "require": {
@@ -3891,7 +3891,7 @@
                 "source": "https://github.com/networking/form-generator-bundle/tree/redesign-2023",
                 "issues": "https://github.com/networking/form-generator-bundle/issues"
             },
-            "time": "2023-11-01T17:46:06+00:00"
+            "time": "2023-11-01T18:02:29+00:00"
         },
         {
             "name": "networking/init-cms-bundle",
@@ -3899,12 +3899,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/networking/init-cms-bundle.git",
-                "reference": "ffa5337ac368d0af752e33fa10becbeba3a7d6b4"
+                "reference": "ce06698d5cf333eb1fe7ba111ad7980d1ef0df20"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/networking/init-cms-bundle/zipball/ffa5337ac368d0af752e33fa10becbeba3a7d6b4",
-                "reference": "ffa5337ac368d0af752e33fa10becbeba3a7d6b4",
+                "url": "https://api.github.com/repos/networking/init-cms-bundle/zipball/ce06698d5cf333eb1fe7ba111ad7980d1ef0df20",
+                "reference": "ce06698d5cf333eb1fe7ba111ad7980d1ef0df20",
                 "shasum": ""
             },
             "require": {
@@ -3986,7 +3986,7 @@
                 "issues": "https://github.com/networking/init-cms-bundle/issues",
                 "source": "https://github.com/networking/init-cms-bundle/tree/redesign-2023"
             },
-            "time": "2023-11-01T17:45:43+00:00"
+            "time": "2023-11-01T18:09:44+00:00"
         },
         {
             "name": "nyholm/dsn",
