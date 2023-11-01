@@ -20,7 +20,7 @@ file that was distributed with this source code.
                     {% set headerBlockCount = page.layoutBlocks('header')|length %}
                     {% for layoutBlock in page.layoutBlocks('header') %}
                         <div class="span{{ 12/headerBlockCount }}">
-                            {% set template = layoutBlock.template|default('content/cms_block.html.twig') %}
+                            {% set template = get_content_template(layoutBlock, 'content/cms_block.html.twig') %}
                             {{ render_initcms_block(template, layoutBlock)}}
                         </div>
                     {% endfor %}
@@ -34,15 +34,7 @@ file that was distributed with this source code.
             <div class="middle">
                 {% for layoutBlock in page.layoutBlocks('left') %}
 
-                    {% set template = layoutBlock.template|default('content/cms_block.html.twig') %}
-
-                    {% if layoutBlock.getContentTypeName() is same as('Custom Form') %}
-                        {% set template = 'content/form_page_content.html.twig' %}
-                    {% endif %}
-
-                    {% if layoutBlock.getContentTypeName() is same as('Gallery Viewerer') %}
-                        {% set template = 'content/gallery_view.html.twig' %}
-                    {% endif %}
+                    {% set template = get_content_template(layoutBlock, 'content/cms_block.html.twig') %}
 
                     {{ render_initcms_block(template, layoutBlock)}}
                 {% endfor %}
@@ -52,17 +44,9 @@ file that was distributed with this source code.
         <div class="col-md-6">
             {% block content_sidebar %}
                 <div class="middle">
-                    {% for layoutBlock in page.layoutBlocsk('right') %}
+                    {% for layoutBlock in page.layoutBlocks('right') %}
 
-                        {% set template = layoutBlock.template|default('content/cms_block.html.twig') %}
-
-                        {% if layoutBlock.getContentTypeName() is same as('Custom Form') %}
-                            {% set template = 'content/form_page_content.html.twig' %}
-                        {% endif %}
-
-                        {% if layoutBlock.getContentTypeName() is same as('Gallery Viewer') %}
-                            {% set template = 'content/gallery_view.html.twig' %}
-                        {% endif %}
+                        {% set template = get_content_template(layoutBlock, 'content/cms_block.html.twig') %}
 
                         {{ render_initcms_block(template, layoutBlock)}}
                     {% endfor %}

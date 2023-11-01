@@ -17,14 +17,7 @@ file that was distributed with this source code.
 		<div class="col">
 			<div class="jumbotron">
 				{% for layoutBlock in page.layoutBlocks('header') %}
-					{% set template = layoutBlock.template|default('content/cms_block.html.twig') %}
-
-					{% if layoutBlock.getContentTypeName() is same as('Custom Form') %}
-						{% set template = 'content/form_page_content.html.twig' %}
-					{% endif %}
-					{% if layoutBlock.getContentTypeName() is same as('Gallery Viewer') %}
-						{% set template = 'content/gallery_view.html.twig' %}
-					{% endif %}
+					{% set template = get_content_template(layoutBlock, 'content/cms_block.html.twig') %}
 					{{ render_initcms_block(template, layoutBlock)}}
 				{% endfor %}
 			</div>
@@ -34,14 +27,7 @@ file that was distributed with this source code.
 		<div class="col-md-12">
 			<div class="middle">
 				{% for layoutBlock in page.layoutBlocks('main_content')  %}
-					{% set template = layoutBlock.template|default('content/cms_block.html.twig') %}
-
-					{% if layoutBlock.getContentTypeName() is same as('Custom Form') %}
-						{% set template = 'content/form_page_content.html.twig' %}
-					{% endif %}
-					{% if layoutBlock.getContentTypeName() is same as('Gallery Viewer') %}
-						{% set template = 'content/gallery_view.html.twig' %}
-					{% endif %}
+					{% set template = get_content_template(layoutBlock, 'content/cms_block.html.twig') %}
 					{{ render_initcms_block(template, layoutBlock)}}
 				{% endfor %}
 			</div>
