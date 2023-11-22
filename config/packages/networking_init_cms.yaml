@@ -7,6 +7,8 @@ imports:
     - { resource: "@NetworkingInitCmsBundle/Resources/config/cms/sonata_doctrine_admin.yaml" }
     - { resource: "@NetworkingInitCmsBundle/Resources/config/cms/sonata_user.yaml" }
     - { resource: "@NetworkingInitCmsBundle/Resources/config/cms/symfony_cmf_routing_extra.yaml" }
+## Uncomment to enable webauthn
+    - { resource: "@NetworkingInitCmsBundle/Resources/config/cms/webauthn.yaml" }
 
 
 framework:
@@ -20,9 +22,12 @@ lexik_translation:
         managed_locales_only: false # set to true to only include managed_locales
 
 networking_init_cms:
+## Uncomment to enable webauthn
+    webauthn:
+        enabled: true
     google_authenticator:
         enabled: true
-        server: 'localhost'
+        server: 'sandbox-6.test'
         trusted_ip_list:
             - 127.0.8.1
         forced_for_role:

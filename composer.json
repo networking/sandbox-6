@@ -12,16 +12,20 @@
         "ext-iconv": "*",
         "ext-json": "*",
         "ext-zip": "*",
+        "bacon/bacon-qr-code": "^2.0",
         "doctrine/annotations": "^1.0",
         "doctrine/doctrine-bundle": "^2.7",
         "doctrine/doctrine-migrations-bundle": "^3.2",
         "doctrine/orm": "^2.14",
         "friendsofsymfony/jsrouting-bundle": "^3.3",
+        "jenssegers/agent": "^2.6",
+        "lbuchs/webauthn": "^2.1",
         "networking/elasticsearch-bundle": "dev-redesign-2023",
         "networking/form-generator-bundle": "dev-redesign-2023",
         "networking/init-cms-bundle": "dev-redesign-2023",
         "phpdocumentor/reflection-docblock": "^5.3",
         "phpstan/phpdoc-parser": "^1.8",
+        "pragmarx/google2fa": "^8.0",
         "symfony/apache-pack": "^1.0",
         "symfony/asset": "6.3.*",
         "symfony/console": "6.3.*",
@@ -97,7 +101,8 @@
         "auto-scripts": {
             "cache:clear": "symfony-cmd",
             "ckeditor:install --clear=drop --tag=4.22.1": "symfony-cmd",
-            "assets:install %PUBLIC_DIR%": "symfony-cmd"
+            "assets:install %PUBLIC_DIR%": "symfony-cmd",
+            "bazinga:js-translation:dump --merge-domains %PUBLIC_DIR%/js": "symfony-cmd"
         },
         "post-install-cmd": [
             "@auto-scripts"

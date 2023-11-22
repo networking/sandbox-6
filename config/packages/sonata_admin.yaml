@@ -3,6 +3,8 @@ sonata_admin:
     options:
         pager_links: 10
         default_admin_route: 'edit'
+    global_search:
+        admin_route: 'edit'
     security:
         handler: sonata.admin.security.handler.acl
         # acl security information
@@ -19,7 +21,7 @@ sonata_admin:
         # permission related to the objects
         object_permissions: [VIEW, EDIT, DELETE, UNDELETE, OPERATOR, MASTER, OWNER, PUBLISH]
     title:      Networking CMS
-    title_logo: /bundles/networkinginitcms/img/logo_initcms.png
+    title_logo: /bundles/networkinginitcms/img/initcms-396x100.png
     templates:
         knp_menu_template: "@NetworkingInitCms/Menu/admin_side_menu.html.twig"
         user_block: '@NetworkingInitCms/Admin/user_block.html.twig'

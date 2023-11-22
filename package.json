@@ -31,6 +31,8 @@
     },
     "dependencies": {
         "@popperjs/core": "^2.11.8",
+        "@simplewebauthn/browser": "^8.3.4",
+        "@simplewebauthn/typescript-types": "^8.3.4",
         "bootstrap": "5",
         "bs5-lightbox": "^1.8.3"
     }

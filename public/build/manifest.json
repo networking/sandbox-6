@@ -1,7 +1,14 @@
 {
-  "build/app.css": "/build/app.1e43734c.css",
-  "build/app.js": "/build/app.3531e64d.js",
-  "build/runtime.js": "/build/runtime.9a71ee5d.js",
-  "build/256.02ec0d10.css": "/build/256.02ec0d10.css",
-  "build/256.e937cc4a.js": "/build/256.e937cc4a.js"
+  "build/app.css": "/build/app.css",
+  "build/app.js": "/build/app.js",
+  "build/register.js": "/build/register.js",
+  "build/signin.js": "/build/signin.js",
+  "build/runtime.js": "/build/runtime.js",
+  "build/vendors-node_modules_core-js_internals_a-constructor_js-node_modules_core-js_modules_es_array-91ccda.js": "/build/vendors-node_modules_core-js_internals_a-constructor_js-node_modules_core-js_modules_es_array-91ccda.js",
+  "build/vendors-node_modules_core-js_modules_es_array_push_js-node_modules_core-js_modules_es_array_r-38fc4e.js": "/build/vendors-node_modules_core-js_modules_es_array_push_js-node_modules_core-js_modules_es_array_r-38fc4e.js",
+  "build/vendors-node_modules_core-js_modules_es_date_to-primitive_js-node_modules_core-js_modules_es_-621c67.js": "/build/vendors-node_modules_core-js_modules_es_date_to-primitive_js-node_modules_core-js_modules_es_-621c67.js",
+  "build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_symfony_ux-autocomple-d5a99e.css": "/build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_symfony_ux-autocomple-d5a99e.css",
+  "build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_symfony_ux-autocomple-d5a99e.js": "/build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_symfony_ux-autocomple-d5a99e.js",
+  "build/vendors-node_modules_core-js_modules_es_array_every_js-node_modules_core-js_modules_es_array_-d168d2.js": "/build/vendors-node_modules_core-js_modules_es_array_every_js-node_modules_core-js_modules_es_array_-d168d2.js",
+  "build/assets_client_js.js": "/build/assets_client_js.js"
 }

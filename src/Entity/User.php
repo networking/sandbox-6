@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\Collection;
 use Networking\InitCmsBundle\Entity\BaseUser;
 use Networking\InitCmsBundle\Entity\Group;
 use Doctrine\ORM\Mapping as ORM;
@@ -34,5 +35,5 @@ class User extends BaseUser
     #[ORM\JoinTable(name: 'user_user_group')]
     #[ORM\JoinColumn(name: 'user_id', referencedColumnName: 'id', onDelete: 'CASCADE')]
     #[ORM\InverseJoinColumn(name: 'group_id', referencedColumnName: 'id', onDelete: 'CASCADE')]
-    protected array|\Doctrine\Common\Collections\Collection $groups = [];
+    protected array|Collection $groups = [];
 }

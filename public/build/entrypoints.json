@@ -2,21 +2,36 @@
   "entrypoints": {
     "app": {
       "js": [
-        "/build/runtime.9a71ee5d.js",
-        "/build/256.e937cc4a.js",
-        "/build/app.3531e64d.js"
+        "/build/runtime.js",
+        "/build/vendors-node_modules_core-js_internals_a-constructor_js-node_modules_core-js_modules_es_array-91ccda.js",
+        "/build/vendors-node_modules_core-js_modules_es_date_to-primitive_js-node_modules_core-js_modules_es_-621c67.js",
+        "/build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_symfony_ux-autocomple-d5a99e.js",
+        "/build/app.js"
       ],
       "css": [
-        "/build/256.02ec0d10.css",
-        "/build/app.1e43734c.css"
+        "/build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_symfony_ux-autocomple-d5a99e.css",
+        "/build/app.css"
+      ]
+    },
+    "register": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors-node_modules_core-js_internals_a-constructor_js-node_modules_core-js_modules_es_array-91ccda.js",
+        "/build/vendors-node_modules_core-js_modules_es_array_push_js-node_modules_core-js_modules_es_array_r-38fc4e.js",
+        "/build/vendors-node_modules_core-js_modules_es_date_to-primitive_js-node_modules_core-js_modules_es_-621c67.js",
+        "/build/vendors-node_modules_core-js_modules_es_array_every_js-node_modules_core-js_modules_es_array_-d168d2.js",
+        "/build/assets_client_js.js",
+        "/build/register.js"
+      ]
+    },
+    "signin": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors-node_modules_core-js_internals_a-constructor_js-node_modules_core-js_modules_es_array-91ccda.js",
+        "/build/vendors-node_modules_core-js_modules_es_array_push_js-node_modules_core-js_modules_es_array_r-38fc4e.js",
+        "/build/assets_client_js.js",
+        "/build/signin.js"
       ]
     }
-  },
-  "integrity": {
-    "/build/runtime.9a71ee5d.js": "sha384-L4SfYhQVswKjKEKxhUFNdD2PfZVf5e+dP5WHQBz8eTm5xp/Qy0Y3Vfw4GKUxNZrZ",
-    "/build/256.e937cc4a.js": "sha384-Upol+692sx5FZnQGD2ud4jKDbdTHmvgoJAhMFTmt2lx2jU9oKtVwfmPDmdRNXrHx",
-    "/build/app.3531e64d.js": "sha384-EgzMyT3nLBT2/ZppVwogVmZ43C8Bel4o0Y7RrSqNuYRBwPr4tjjs8UAfKcH1/ULB",
-    "/build/256.02ec0d10.css": "sha384-n0fExi1BgtoZaHZhWz5Bx1OEvmcqHDEQPkYI2biIz5oWYxoDzNlik1OtzJXOcTPD",
-    "/build/app.1e43734c.css": "sha384-zb0F42PM+nRx7TegSd8kO59QO+vdER8mAOn1IXYNhcT3QL1j1XIReTXDWrZHrLE6"
   }
 }

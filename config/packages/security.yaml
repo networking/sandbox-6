@@ -50,7 +50,18 @@ security:
                 lifetime: 31536000 # 365 days in seconds
                 path: /
                 domain: ~
-        # -> end custom configuration
+
+            ## Comment out to disable webauthn
+            webauthn:
+                registration:
+                    enabled: true
+                    routes:
+                        options_path: '/admin/register/options'
+                authentication:
+                    enabled: true
+                    routes:
+                        options_path: '/admin/assertion/options'
+                        result_path: '/admin/assertion'
 
         # defaut login area for standard users
         main:
@@ -72,6 +83,7 @@ security:
         - { path: ^/_profiler, role: PUBLIC_ACCESS }
         - { path: ^/login$, role: PUBLIC_ACCESS }
         - { path: ^/login_$, role: PUBLIC_ACCESS }
+        - { path: ^/admin/assertion,  roles: PUBLIC_ACCESS, requires_channel: 'https' }
 
         # -> custom access control for the admin area of the URL
         - { path: ^/admin/login$, role: PUBLIC_ACCESS }

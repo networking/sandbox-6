@@ -304,6 +304,9 @@
     "sonata-project/user-bundle": {
         "version": "5.3.3"
     },
+    "spomky-labs/cbor-bundle": {
+        "version": "v3.0.0"
+    },
     "squizlabs/php_codesniffer": {
         "version": "3.7",
         "recipe": {
@@ -521,6 +524,18 @@
             "templates/base.html.twig"
         ]
     },
+    "symfony/uid": {
+        "version": "6.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "6.2",
+            "ref": "d294ad4add3e15d7eb1bae0221588ca89b38e558"
+        },
+        "files": [
+            "config/packages/uid.yaml"
+        ]
+    },
     "symfony/ux-autocomplete": {
         "version": "2.6",
         "recipe": {
@@ -612,6 +627,19 @@
     },
     "twig/extra-bundle": {
         "version": "v3.4.0"
+    },
+    "web-auth/webauthn-symfony-bundle": {
+        "version": "4.7",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "main",
+            "version": "3.0",
+            "ref": "a5dff33bd46575bea263af94069650af7742dcb6"
+        },
+        "files": [
+            "config/packages/webauthn.yaml",
+            "config/routes/webauthn_routes.yaml"
+        ]
     },
     "willdurand/js-translation-bundle": {
         "version": "5.1",
