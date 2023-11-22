@@ -1036,6 +1036,7 @@ t.add("infotext.sitemap", "\n                <p>\n                The CMS genera
 t.add("selected", "Selected", "NetworkingInitCmsBundle", "en");
 t.add("btn_confirm", "Confirm", "NetworkingInitCmsBundle", "en");
 t.add("help", "Help", "NetworkingInitCmsBundle", "en");
+t.add("link.show_all", "Show all", "NetworkingInitCmsBundle", "en");
 t.add("breadcrumb.link_dashboard", "\u2302", "PageAdmin", "en");
 t.add("breadcrumb.link_page_list", "Organise your Pages", "PageAdmin", "en");
 t.add("breadcrumb.link_page_edit", "Edit Page", "PageAdmin", "en");

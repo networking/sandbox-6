@@ -97,6 +97,7 @@ t.add("This value should satisfy at least one of the following constraints:", "A
 t.add("Each element of this collection should satisfy its own set of constraints.", "Fiecare element din acest set ar trebui s\u0103 \u00eendeplineasc\u0103 propriul set de reguli.", "validators", "ro");
 t.add("This value is not a valid International Securities Identification Number (ISIN).", "Aceast\u0103 valoare nu este un num\u0103r interna\u021bional de identificare (ISIN) valabil.", "validators", "ro");
 t.add("This value should be a valid expression.", "Aceast\u0103 valoare ar trebui s\u0103 fie o expresie valid\u0103.", "validators", "ro");
+t.add("This value is not a valid CSS color.", "Aceast\u0103 valoare nu este o culoare CSS valid\u0103.", "validators", "ro");
 t.add("This value is not a valid CIDR notation.", "Aceast\u0103 valoare nu este o nota\u021bie CIDR valid\u0103.", "validators", "ro");
 t.add("The value of the netmask should be between {{ min }} and {{ max }}.", "Valoarea netmask-ului trebuie sa fie intre {{ min }} si {{ max }}.", "validators", "ro");
 t.add("The filename is too long. It should have {{ filename_max_length }} character or less.|The filename is too long. It should have {{ filename_max_length }} characters or less.", "Denumirea fi\u0219ierului este prea lung\u0103. Ea trebuie s\u0103 con\u021bin\u0103 {{ filename_max_length }} caractere sau mai pu\u021bine.|Denumirea fi\u0219ierului este prea lung\u0103. Ea trebuie s\u0103 con\u021bin\u0103 {{ filename_max_length }} caractere sau mai pu\u021bine.", "validators", "ro");

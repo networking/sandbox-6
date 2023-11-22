@@ -100,6 +100,12 @@ t.add("This value should be a valid expression.", "\u8be5\u503c\u9700\u4e3a\u4e0
 t.add("This value is not a valid CSS color.", "\u8be5\u503c\u4e0d\u662f\u6709\u6548\u7684CSS\u989c\u8272\u3002", "validators", "zh_CN");
 t.add("This value is not a valid CIDR notation.", "\u8be5\u503c\u4e0d\u662f\u4e00\u4e2a\u6709\u6548\u7684CIDR\u8868\u793a\u3002", "validators", "zh_CN");
 t.add("The value of the netmask should be between {{ min }} and {{ max }}.", "\u7f51\u7edc\u63a9\u7801\u7684\u503c\u5e94\u5f53\u5728 {{ min }} \u548c {{ max }} \u4e4b\u95f4\u3002", "validators", "zh_CN");
+t.add("The filename is too long. It should have {{ filename_max_length }} character or less.|The filename is too long. It should have {{ filename_max_length }} characters or less.", "\u8be5\u6587\u4ef6\u540d\u8fc7\u957f\uff0c\u6700\u957f\u4e0d\u5e94\u8d85\u8fc7{{ filename_max_length }} \u4e2a\u5b57\u7b26\u3002", "validators", "zh_CN");
+t.add("The password strength is too low. Please use a stronger password.", "\u8be5\u5bc6\u7801\u5f3a\u5ea6\u592a\u4f4e\u3002\u8bf7\u4f7f\u7528\u66f4\u590d\u6742\u7684\u5bc6\u7801\u3002", "validators", "zh_CN");
+t.add("This value contains characters that are not allowed by the current restriction-level.", "\u8be5\u503c\u5305\u542b\u4e86\u5f53\u524d\u9650\u5236\u7ea7\u522b\u4e0d\u5141\u8bb8\u7684\u5b57\u7b26\u3002", "validators", "zh_CN");
+t.add("Using invisible characters is not allowed.", "\u4e0d\u5141\u8bb8\u4f7f\u7528\u9690\u85cf\u5b57\u7b26\u3002", "validators", "zh_CN");
+t.add("Mixing numbers from different scripts is not allowed.", "\u4e0d\u53ef\u6df7\u5408\u4f7f\u7528\u4e0d\u540c\u8bed\u7cfb\u7684\u6570\u5b57\u3002", "validators", "zh_CN");
+t.add("Using hidden overlay characters is not allowed.", "\u4e0d\u5141\u8bb8\u4f7f\u7528\u9690\u85cf\u7684\u8986\u76d6\u5b57\u7b26\u3002", "validators", "zh_CN");
 t.add("This form should not contain extra fields.", "\u8be5\u8868\u5355\u4e2d\u4e0d\u53ef\u6709\u989d\u5916\u5b57\u6bb5.", "validators", "zh_CN");
 t.add("The uploaded file was too large. Please try to upload a smaller file.", "\u4e0a\u4f20\u6587\u4ef6\u592a\u5927\uff0c \u8bf7\u91cd\u65b0\u5c1d\u8bd5\u4e0a\u4f20\u4e00\u4e2a\u8f83\u5c0f\u7684\u6587\u4ef6.", "validators", "zh_CN");
 t.add("The CSRF token is invalid. Please try to resubmit the form.", "CSRF \u9a8c\u8bc1\u7b26\u65e0\u6548\uff0c \u8bf7\u91cd\u65b0\u63d0\u4ea4.", "validators", "zh_CN");
