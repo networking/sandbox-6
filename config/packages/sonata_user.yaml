@@ -1,0 +1,18 @@
+sonata_user:
+    security_acl: false
+    impersonating:
+        route:                networking_init_cms_admin
+        parameters:           { path: /}
+    class:
+        user: 'App\Entity\User'
+
+    resetting:
+        email:
+            address: '%env(ADMIN_EMAIL_ADDRESS)%'
+            sender_name: InitCms
+
+    admin:                  # Admin Classes
+        user:
+            class:          'Networking\InitCmsBundle\Admin\UserAdmin'
+            controller:     'Networking\InitCmsBundle\Controller\UserAdminController'
+            translation:    'SonataUserBundle'

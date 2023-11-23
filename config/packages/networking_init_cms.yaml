@@ -5,7 +5,6 @@ imports:
     - { resource: "@NetworkingInitCmsBundle/Resources/config/cms/oneup_uploader.yaml" }
     - { resource: "@NetworkingInitCmsBundle/Resources/config/cms/sonata_block.yaml" }
     - { resource: "@NetworkingInitCmsBundle/Resources/config/cms/sonata_doctrine_admin.yaml" }
-    - { resource: "@NetworkingInitCmsBundle/Resources/config/cms/sonata_user.yaml" }
     - { resource: "@NetworkingInitCmsBundle/Resources/config/cms/symfony_cmf_routing_extra.yaml" }
 ## Uncomment to enable webauthn
     - { resource: "@NetworkingInitCmsBundle/Resources/config/cms/webauthn.yaml" }
@@ -26,7 +25,7 @@ networking_init_cms:
     webauthn:
         enabled: true
     google_authenticator:
-        enabled: true
+        enabled: false
         server: 'sandbox-6.test'
         trusted_ip_list:
             - 127.0.8.1
