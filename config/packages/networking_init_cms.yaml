@@ -21,14 +21,17 @@ lexik_translation:
         managed_locales_only: false # set to true to only include managed_locales
 
 networking_init_cms:
-## Uncomment to enable webauthn
+    email_address:
+        from_name: 'InitCMS'
+        from_address: '%env(ADMIN_EMAIL_ADDRESS)%'
+    ## Uncomment to enable webauthn
     webauthn:
         enabled: true
     google_authenticator:
-        enabled: false
+        enabled: true
         server: 'sandbox-6.test'
         trusted_ip_list:
-            - 127.0.8.1
+            - 127.0.0.1
         forced_for_role:
             - ROLE_SONATA_ADMIN
             - ROLE_SUPER_ADMIN
