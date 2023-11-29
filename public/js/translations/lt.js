@@ -100,6 +100,12 @@ t.add("This value should be a valid expression.", "\u0160i vert\u0117 tur\u0117t
 t.add("This value is not a valid CSS color.", "\u0160i reik\u0161m\u0117 n\u0117ra tinkama CSS spalva.", "validators", "lt");
 t.add("This value is not a valid CIDR notation.", "\u0160i vert\u0117 n\u0117ra tinkamas CIDR \u017eym\u0117jimas.", "validators", "lt");
 t.add("The value of the netmask should be between {{ min }} and {{ max }}.", "Tinklo kauk\u0117s reik\u0161m\u0117 turi b\u016bti nuo {{ min }} iki {{ max }}.", "validators", "lt");
+t.add("The filename is too long. It should have {{ filename_max_length }} character or less.|The filename is too long. It should have {{ filename_max_length }} characters or less.", "Failo pavadinimas per ilgas. Jame tur\u0117t\u0173 b\u016bti {{ filename_max_length }} simbolis arba ma\u017eiau.|Failo pavadinimas per ilgas. Jame tur\u0117t\u0173 b\u016bti {{ filename_max_length }} simboli\u0173 arba ma\u017eiau.", "validators", "lt");
+t.add("The password strength is too low. Please use a stronger password.", "Slapta\u017eodis per silpnas. Naudokite stipresn\u012f slapta\u017eod\u012f.", "validators", "lt");
+t.add("This value contains characters that are not allowed by the current restriction-level.", "\u0160ioje reik\u0161m\u0117je yra simboli\u0173, kuri\u0173 neleid\u017eia dabartinis apribojimo lygis.", "validators", "lt");
+t.add("Using invisible characters is not allowed.", "Naudoti nematomus simbolius draud\u017eiama.", "validators", "lt");
+t.add("Mixing numbers from different scripts is not allowed.", "Draud\u017eiama mai\u0161yti skai\u010dius i\u0161 skirting\u0173 scenarij\u0173.", "validators", "lt");
+t.add("Using hidden overlay characters is not allowed.", "Draud\u017eiama naudoti pasl\u0117ptus perdangos simbolius.", "validators", "lt");
 t.add("This form should not contain extra fields.", "Forma negali tur\u0117ti papildom\u0173 lauk\u0173.", "validators", "lt");
 t.add("The uploaded file was too large. Please try to upload a smaller file.", "\u012ekelta byla yra per didel\u0117. bandykite \u012fkelti ma\u017eesn\u0119.", "validators", "lt");
 t.add("The CSRF token is invalid. Please try to resubmit the form.", "CSRF kodas nepriimtinas. Bandykite si\u0173sti formos u\u017eklaus\u0105 dar kart\u0105.", "validators", "lt");

@@ -100,6 +100,12 @@ t.add("This value should be a valid expression.", "Bu de\u011fer ge\u00e7erli bi
 t.add("This value is not a valid CSS color.", "Bu de\u011fer ge\u00e7erli bir CSS rengi de\u011fil.", "validators", "tr");
 t.add("This value is not a valid CIDR notation.", "Bu de\u011fer ge\u00e7erli bir CIDR yaz\u0131m\u0131 de\u011fil.", "validators", "tr");
 t.add("The value of the netmask should be between {{ min }} and {{ max }}.", "Netmask'in de\u011feri {{ min }} ve {{ max }} aras\u0131nda olmald\u0131r.", "validators", "tr");
+t.add("The filename is too long. It should have {{ filename_max_length }} character or less.|The filename is too long. It should have {{ filename_max_length }} characters or less.", "Dosya ad\u0131 \u00e7ok uzun. {{ filename_max_length }} karakter veya daha az olmal\u0131d\u0131r.", "validators", "tr");
+t.add("The password strength is too low. Please use a stronger password.", "\u015eifre g\u00fcc\u00fc \u00e7ok d\u00fc\u015f\u00fck. L\u00fctfen daha g\u00fc\u00e7l\u00fc bir \u015fifre kullan\u0131n.", "validators", "tr");
+t.add("This value contains characters that are not allowed by the current restriction-level.", "Bu de\u011fer, mevcut k\u0131s\u0131tlama seviyesi taraf\u0131ndan izin verilmeyen karakterler i\u00e7eriyor.", "validators", "tr");
+t.add("Using invisible characters is not allowed.", "G\u00f6r\u00fcnmez karakterlerin kullan\u0131lmas\u0131 izin verilmez.", "validators", "tr");
+t.add("Mixing numbers from different scripts is not allowed.", "Farkl\u0131 yaz\u0131 t\u00fcrlerinden say\u0131lar\u0131n kar\u0131\u015ft\u0131r\u0131lmas\u0131 izin verilmez.", "validators", "tr");
+t.add("Using hidden overlay characters is not allowed.", "Gizli \u00fcst\u00fc kaplama karakterlerinin kullan\u0131lmas\u0131 izin verilmez.", "validators", "tr");
 t.add("This form should not contain extra fields.", "Form ekstra alanlar i\u00e7eremez.", "validators", "tr");
 t.add("The uploaded file was too large. Please try to upload a smaller file.", "Y\u00fcklenen dosya boyutu \u00e7ok y\u00fcksek. L\u00fctfen daha k\u00fc\u00e7\u00fck bir dosya y\u00fcklemeyi deneyin.", "validators", "tr");
 t.add("The CSRF token is invalid. Please try to resubmit the form.", "CSRF fi\u015fi ge\u00e7ersiz. Formu tekrar g\u00f6ndermeyi deneyin.", "validators", "tr");
