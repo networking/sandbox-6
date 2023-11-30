@@ -78,7 +78,6 @@ security:
             logout: true
 
     access_control:
-        # URL of FOSUserBundle which need to be available to anonymous users
         - { path: ^/_wdt, role: PUBLIC_ACCESS }
         - { path: ^/_profiler, role: PUBLIC_ACCESS }
         - { path: ^/login$, role: PUBLIC_ACCESS }
@@ -95,9 +94,6 @@ security:
         - { path: ^/admin/reset, role: PUBLIC_ACCESS }
         - { path: ^/admin/_initcms_admin_navbar/.*$, role: PUBLIC_ACCESS }
         # -> end
-
-        - { path: ^/register, role: PUBLIC_ACCESS }
-        - { path: ^/resetting, role: PUBLIC_ACCESS }
 
         # Secured part of the site
         # This config requires being logged for the whole site and having the admin role for the admin part.

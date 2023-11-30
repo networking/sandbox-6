@@ -27,8 +27,8 @@ networking_init_cms:
     ## Comment out to disable webauthn
     webauthn:
         enabled: true
-    ## Comment out to disable google authenticator
-    google_authenticator:
+    ## Comment out to disable two-factor authentication
+    2fa_authenticator:
         enabled: true
         server: 'sandbox-6.test'
         trusted_ip_list:
@@ -39,8 +39,8 @@ networking_init_cms:
     single_language: false
     allow_locale_cookie: true
     class:
-        page: "App\\Entity\\Page"
-        user: "App\\Entity\\User"
+        page: 'App\Entity\Page'
+        user: 'App\Entity\User'
     languages:
         - { label: D, locale: de }
         - { label: F, locale: fr }
@@ -48,14 +48,14 @@ networking_init_cms:
         - { label: E, locale: en }
     # Bootstrap some template settings to get you started
     templates:
-        'app_single_column':
+        app_single_column:
             template: "page/one_column.html.twig"
             name: "Single Column"
             icon: "bundles/networkinginitcms/img/template_header_one_column.png"
             zones:
                 - { name: header, class: 'col-md-12' }
                 - { name: main_content, class: 'col-md-12'}
-        'app_two_column':
+        app_two_column:
             template: "page/two_column.html.twig"
             name: "Two Column"
             icon: "bundles/networkinginitcms/img/template_header_two_column.png"
