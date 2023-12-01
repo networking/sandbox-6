@@ -16,3 +16,7 @@ networking_init_cms_webauthn:
     resource: "@NetworkingInitCmsBundle/Resources/config/routing/webauthn.yaml"
     prefix:   /
 
+when@dev:
+    networking_init_install:
+        resource: "@NetworkingInitCmsBundle/Resources/config/routing/install.yaml"
+        prefix: /

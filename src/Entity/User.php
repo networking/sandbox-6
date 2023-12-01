@@ -3,9 +3,9 @@
 namespace App\Entity;
 
 use Doctrine\Common\Collections\Collection;
+use Doctrine\ORM\Mapping as ORM;
 use Networking\InitCmsBundle\Entity\BaseUser;
 use Networking\InitCmsBundle\Entity\Group;
-use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Table(name: 'user')]
 #[ORM\Entity]

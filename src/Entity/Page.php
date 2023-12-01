@@ -2,9 +2,9 @@
 namespace App\Entity;
 
 use Doctrine\Common\Collections\Collection;
+use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Networking\InitCmsBundle\Entity\BasePage;
-use Doctrine\ORM\Mapping as ORM;
 use Networking\InitCmsBundle\Entity\LayoutBlock;
 use Networking\InitCmsBundle\Entity\MenuItem;
 use Networking\InitCmsBundle\Entity\PageSnapshot;

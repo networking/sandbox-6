@@ -32,7 +32,7 @@ networking_init_cms:
         enabled: true
         server: 'sandbox-6.test'
         trusted_ip_list:
-            - 127.0.0.8
+            - 127.0.0.1
         forced_for_role:
             - ROLE_SONATA_ADMIN
             - ROLE_SUPER_ADMIN
