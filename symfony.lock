@@ -140,18 +140,16 @@
         "version": "v5.4.5"
     },
     "networking/init-cms-bundle": {
-        "version": "5.4",
+        "version": "6.4",
         "recipe": {
             "repo": "github.com/networking/recipes",
             "branch": "main",
-            "version": "5.4",
-            "ref": "2afb5e9bad77aa5cc5a633d919956b4a3ef0a185"
+            "version": "6.4",
+            "ref": "136c62e4d0d0cc244c2e39c33cd93d3ddb2e2c2b"
         },
         "files": [
-            "config/packages/dev/networking_init_cms.yaml",
             "config/packages/networking_init_cms.yaml",
             "config/routes/networking_init_cms.yaml",
-            "config/serializer/Entity.Page.yaml",
             "src/Entity/Page.php",
             "src/Entity/User.php"
         ]

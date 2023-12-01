@@ -30,10 +30,8 @@ class Page extends BasePage
     #[ORM\OrderBy(['sortOrder' => 'ASC'])]
     protected ?Collection $layoutBlocks = null;
 
-
     #[ORM\OneToMany(mappedBy: 'page', targetEntity: MenuItem::class, cascade: ['remove'], orphanRemoval: true)]
     protected ?Collection $menuItem = null;
-
 
     #[ORM\OneToMany(mappedBy: 'page', targetEntity: PageSnapshot::class, cascade: ['remove'], orphanRemoval: true)]
     #[ORM\OrderBy(['version' => 'DESC'])]
